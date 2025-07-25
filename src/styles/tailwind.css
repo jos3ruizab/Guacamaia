@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Core System Colors */
+    --color-background: #ffffff; /* white */
+    --color-foreground: #1e1e1e; /* midnight-black */
+    --color-border: rgba(30, 30, 30, 0.1); /* midnight-black with opacity */
+    --color-input: #ffffff; /* white */
+    --color-ring: #007dc3; /* ocean-blue */
+    
+    /* Card & Surface Colors */
+    --color-card: #fafaf9; /* warm-white */
+    --color-card-foreground: #1e1e1e; /* midnight-black */
+    --color-popover: #ffffff; /* white */
+    --color-popover-foreground: #1e1e1e; /* midnight-black */
+    
+    /* Muted Colors */
+    --color-muted: #f4f1ec; /* sand */
+    --color-muted-foreground: #6b7280; /* sophisticated-gray */
+    
+    /* Brand Colors */
+    --color-primary: #007dc3; /* ocean-blue */
+    --color-primary-foreground: #ffffff; /* white */
+    --color-secondary: #f4f1ec; /* sand */
+    --color-secondary-foreground: #1e1e1e; /* midnight-black */
+    
+    /* Accent Colors */
+    --color-accent: #d4af37; /* baroque-gold */
+    --color-accent-foreground: #1e1e1e; /* midnight-black */
+    
+    /* State Colors */
+    --color-success: #059669; /* travel-green */
+    --color-success-foreground: #ffffff; /* white */
+    --color-warning: #d97706; /* sunset-orange */
+    --color-warning-foreground: #ffffff; /* white */
+    --color-error: #dc2626; /* refined-red */
+    --color-error-foreground: #ffffff; /* white */
+    --color-destructive: #dc2626; /* refined-red */
+    --color-destructive-foreground: #ffffff; /* white */
+    
+    /* Border Radius */
+    --radius: 8px;
+  }
+  
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  /* Typography Classes */
+  .font-heading {
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-caption {
+    font-family: 'Source Sans Pro', sans-serif;
+  }
+  
+  .font-data {
+    font-family: 'JetBrains Mono', monospace;
+  }
+  
+  /* Ambient Background Textures */
+  .ambient-texture {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .ambient-texture::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23007dc3' fill-opacity='0.05'%3E%3Cpath d='M30 30c0-11.046-8.954-20-20-20s-20 8.954-20 20 8.954 20 20 20 20-8.954 20-20zm0 0c0 11.046 8.954 20 20 20s20-8.954 20-20-8.954-20-20-20-20 8.954-20 20z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    opacity: 0.1;
+    animation: float 20s ease-in-out infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(1deg); }
+  }
+  
+  /* Baroque-inspired Loading Pattern */
+  .baroque-skeleton {
+    background: linear-gradient(
+      90deg,
+      transparent 25%,
+      rgba(212, 175, 55, 0.1) 50%,
+      transparent 75%
+    );
+    background-size: 200% 100%;
+    animation: baroque-shimmer 2s infinite;
+  }
+  
+  @keyframes baroque-shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  
+  /* Elevation System */
+  .elevation-1 {
+    box-shadow: 0 2px 4px rgba(30, 30, 30, 0.1);
+  }
+  
+  .elevation-2 {
+    box-shadow: 0 4px 8px rgba(30, 30, 30, 0.12);
+  }
+  
+  .elevation-3 {
+    box-shadow: 0 8px 16px rgba(30, 30, 30, 0.13);
+  }
+  
+  .elevation-4 {
+    box-shadow: 0 12px 24px rgba(30, 30, 30, 0.14);
+  }
+  
+  .elevation-5 {
+    box-shadow: 0 20px 40px rgba(30, 30, 30, 0.15);
+  }
+  
+  /* Spring Animation Utilities */
+  .spring-transition {
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .spring-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(30, 30, 30, 0.13);
+  }
+  
+  /* Conversational Animation Classes */
+  .message-slide-in {
+    animation: slideInMessage 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  @keyframes slideInMessage {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .typing-indicator {
+    animation: pulse 1.5s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+  
+  /* Progressive Disclosure Animations */
+  .accordion-reveal {
+    animation: accordionReveal 0.15s ease-out;
+  }
+  
+  @keyframes accordionReveal {
+    from {
+      opacity: 0;
+      max-height: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      max-height: 200px;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Fluid Typography */
+  .fluid-heading-xl {
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    line-height: 1.2;
+  }
+  
+  .fluid-heading-lg {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    line-height: 1.3;
+  }
+  
+  .fluid-heading-md {
+    font-size: clamp(1.25rem, 2.5vw, 2rem);
+    line-height: 1.4;
+  }
+  
+  .fluid-body {
+    font-size: clamp(0.875rem, 1.5vw, 1.125rem);
+    line-height: 1.6;
+  }
+  
+  /* Gesture-Aware Interactions */
+  .touch-friendly {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  @media (hover: hover) {
+    .hover-lift:hover {
+      transform: translateY(-2px);
+      transition: transform 0.2s ease-out;
+    }
+  }
+  
+  /* Scrollbar Styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: var(--color-muted);
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 3px;
+  }
+  
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #b8941f;
+  }
+}
