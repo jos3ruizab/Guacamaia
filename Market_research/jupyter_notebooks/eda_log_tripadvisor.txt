@@ -1,0 +1,76 @@
+inspección de nulos y cardinalidad por columna
+Exploración de la distribución de ratings y de años de reseñas
+Análisis temporal de reseñas por año y mes
+Heatmap de reseñas (año × mes)
+Cálculo y visualización del rating promedio por año
+Visualización combinada: heatmap de reseñas y línea de rating promedio anual
+Cálculo del rating promedio por mes (estacionalidad)
+Cálculo de volumen promedio de reseñas por mes (estacionalidad)
+Visualización comparativa: volumen de reseñas vs rating promedio por mes
+Calendario turístico: heatmap día × mes con rating promedio
+Rating promedio por región y mes
+Volumen de reseñas por región y mes
+Dashboard comparativo: volumen y rating por región y mes
+Análisis de top 10 ciudades con más reseñas y su estacionalidad de ratings
+Estacionalidad del volumen de reseñas en las Top 10 ciudades
+Dashboard comparativo: volumen y rating en las Top 10 ciudades por mes
+Análisis temporal del rating promedio por tipo de destino
+Estacionalidad del volumen de reseñas por tipo de destino
+Dashboard comparativo: volumen y rating por tipo de destino y mes
+Timeline narrativo con contexto histórico del turismo venezolano (2004–2025)
+Curva acumulada de reseñas día a día con eventos externos
+Comparar velocidad de acumulación de reseñas en diferentes periodos históricos
+Construir serie temporal mensual de reseñas
+Descomponer la serie temporal en tendencia, estacionalidad y residuales
+Validación completada. Si las métricas y la forma temporal encajan, pasamos a forecast hacia adelante (p.ej., 12 meses).
+Pronosticar 3 años (36 meses) y 5 años (60 meses) con el modelo SARIMA
+Comparación de reseñas por región y concentración de destinos principales
+Pareto 80/20 de reseñas por ciudad
+Matriz de concentración por ciudad (Top 15) y tipo de destino
+Pareto nacional  (fix columnas y orientación)
+Detectar idioma de reseñas a partir de 'texto_limpio' y 'review_title'
+Tokenizar texto por idioma con stopwordsiso 
+Extraer bigramas más frecuentes por idioma (Top-K)
+Mostrar Top-5 bigramas por cada idioma presente
+TF-IDF por idioma a partir de 'tokens' (1-2 grams)
+Preparar columna de texto fuente
+Inferencia directa: FP16, batching adaptativo y max_length=128
+Distribución de etiquetas y medias por idioma/ciudad
+QA: p_sum≈1, argmax==label, distribución
+Construir matriz de % de sentimientos por ciudad (Top 15) y graficar
+Añadir sent_label/sent_score a df_margarita (join por índice o cálculo directo)
+Matriz % sentimientos por microciudad en Margarita (Top 20)
+Persistir columna 'ciudad_grouped'
+Matriz % sentimientos por ciudad (Top 15) y heatmap
+Ranking de ciudades por sent_score medio con umbral de volumen
+Matriz tipo × sentimientos y gráfico apilado
+Tendencia mensual de sent_score (global y por Top ciudades)
+Ranking de locations por sent_score medio (con mínimo de reseñas)
+Comparar 'Margarita' con las 5 ciudades no-Margarita con más reseñas
+Matriz de % de sentimientos por idioma (Top 12) y gráfico
+Ranking de idiomas por sent_score medio con filtro de mínimo de reseñas
+Gap Sentimiento–Rating por ciudad con umbral de volumen
+Bigrámas (tokens) por polaridad y ciudad 
+Priorizar ciudades por % de reseñas muy negativas (alta confianza)
+Volatilidad mensual de sent_score por ciudad (estabilidad reputacional)
+Serie mensual y media móvil (3M) de sent_score por ciudad (Top-6 volumen)
+Crear df_intl con reseñas no-español
+KPIs por ciudad (intl): volumen, rating medio, sent_mean y % etiquetas
+Heatmap de % de sentimientos por ciudad (intl, Top 15 por volumen)
+Internacional: % positivo por ciudad (agrupada) y tipo (Top 10 por volumen)
+Internacional: ranking de locations por sent_score medio (umbral de volumen)
+Intl: mezcla de idiomas por ciudad y relación con sent_mean
+Intl: tendencia mensual de sent_mean para Top-6 ciudades
+Resumen internacional por ciudad (macro): Top/Bottom sent_mean y Top volumen
+Internacional por idioma: rankings de ciudades (sent_mean y volumen)
+Graficar por idioma: Top/Bottom sent_mean y Top volumen (ciudad_grouped)
+WordCloud internacional 
+WordCloud internacional sin español ni inglés 
+IGSI (0–100) en lang≠'es' por ciudad (macro)
+Mapa competitivo internacional por ciudad (lang ≠ 'es')
+Auditar % de reseñas >128 tokens por idioma (muestra)
+Sensibilidad de IGSI: comparar TH=0.70 vs TH=0.60
+Afinidad Ciudad–Idioma (ACI) en internacional
+Heatmap ACI (Top ciudades x Top idiomas)
+Heatmap ACI (absoluto) y normalizado por ciudad (0–100)
+Exportar CSV de features por ciudad (intl) — IGSI, riesgo, %intl, entropía, crecimiento, ACI_*
